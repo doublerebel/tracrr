@@ -22,10 +22,12 @@ class Tracrr
     # i.e. https://github.com/doublerebel/titanium_mobile/commit/5c0d472650fa658405d364a05aad87bad9591e0e#L0R165
     @Debug ?= debug.Debug
     @Debug.setListener @trace
+    @Debug.debuggerFlags().breakOnCaughtException.setValue true
     @attached = true
 
   @detach: ->
     @Debug?.setListener null
+    @Debug.debuggerFlags().breakOnCaughtException.setValue false
     @attached = false
 
   # This function executes in its own Debug context
