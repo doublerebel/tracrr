@@ -50,7 +50,10 @@ class Tracrr
     frames = _maxFrames if frames > _maxFrames
     stackTrace = for frame in [1..frames]
       sf = exec_state.frame frame++
-      "At #{sf.func().name()} in #{sf.func().script().name()}[#{sf.sourceLine() + 1},#{sf.sourceColumn() + 1}] #{sf.sourceLineText()}"
+      fnc = sf.func()
+      fname = fnc.name()
+      fname = fnc.inferredName() if fname is ""
+      "At #{fname} in #{fnc.script().name()}[#{sf.sourceLine() + 1},#{sf.sourceColumn() + 1}] #{sf.sourceLineText()}"
 
     exText = """#{ex.caught} Exception: #{ex.exception}
 At #{ex.frameFuncName} in #{ex.script}[#{ex.line},#{ex.column}] #{ex.text}"""
