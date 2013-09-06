@@ -1,0 +1,30 @@
+{
+  "name": "tracrr",
+  "version": "0.0.4",
+  "description": "Watches and logs V8 events using the internal programmatic debugger",
+  "main": "lib/tracrr.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/doublerebel/tracrr.git"
+  },
+  "keywords": [
+    "v8",
+    "debug",
+    "trace",
+    "exception",
+    "debugger",
+    "stacktrace",
+    "inspect",
+    "inspector",
+    "log",
+    "test",
+    "node",
+    "titanium"
+  ],
+  "author": "Charles Phillips",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}
